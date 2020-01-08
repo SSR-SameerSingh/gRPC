@@ -1,0 +1,31 @@
+// protoc --go_out=plugins=grpc:. *.proto
+
+syntax = "proto3";
+
+//package name
+package m.gameengine.v1;
+
+//name of the go package
+option go_package = "gamenegine";
+
+//define the service or APIs
+service GameEngine{
+    rpc GetSize(GetSizeRequest) returns (GetSizeResponse);
+    rpc SetScore(SetScoreRequest) returns (SetScoreResponse);
+}
+
+//message to define what above functions are
+message GetSizeRequest {
+}
+
+message GetSizeResponse {
+    double size = 1;
+}
+
+message SetScoreRequest {
+    double score = 1;
+}
+
+message SetScoreResponse {
+    bool set = 1;
+}
