@@ -21,7 +21,7 @@ func main() {
 	defer func() {
 		err := conn.Close()
 		if err != nil {
-			log.Error().Err(err).Str("address", *addressPtr, "failed to close connection")
+			log.Error().Err(err).Str("address", *addressPtr).Msg("failed to close connection")
 		}
 	}()
 
